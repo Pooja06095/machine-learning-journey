@@ -1,0 +1,7 @@
+id,age,salary,city
+1,25,50000,New York
+2,,60000,London
+3,30,,
+4,35,80000,Paris
+5,,90000,London
+6,100,,
