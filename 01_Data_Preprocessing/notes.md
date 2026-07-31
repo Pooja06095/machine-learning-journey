@@ -127,3 +127,166 @@ Random Sampling Imputation.
 ## Status
 
 ✅ Completed on: 27 July 2026
+
+
+
+# Encoding
+
+## What is Encoding?
+
+Encoding is a data preprocessing technique used to convert categorical data into numerical values so that Machine Learning algorithms can understand and process the data.
+
+---
+
+## Why is Encoding Required?
+
+Machine Learning algorithms work with numerical data, not text values.
+
+Example:
+
+Male, Female ❌
+
+↓
+
+1, 0 ✅
+
+---
+
+## Types of Encoding
+
+### 1. Label Encoding
+
+Assigns a unique integer to each category.
+
+Example:
+
+Male → 1
+
+Female → 0
+
+#### Best Used For
+
+- Binary categorical features
+- Target labels
+
+#### Advantages
+
+- Simple and fast
+- Easy to implement
+
+#### Disadvantages
+
+- May create an artificial order between categories.
+
+---
+
+### 2. One-Hot Encoding
+
+Creates a separate binary column for each category.
+
+Example:
+
+City
+
+Delhi
+
+Mumbai
+
+Pune
+
+↓
+
+city_Delhi | city_Mumbai | city_Pune
+
+1 | 0 | 0
+
+0 | 1 | 0
+
+0 | 0 | 1
+
+#### Best Used For
+
+- Nominal categorical data
+- Features with no natural order
+
+#### Advantages
+
+- No false ordering between categories.
+- Most commonly used encoding technique.
+
+#### Disadvantages
+
+- Creates many new columns if categories are large.
+
+---
+
+### 3. Ordinal Encoding
+
+Assigns numbers according to the natural order of categories.
+
+Example:
+
+School → 0
+
+College → 1
+
+PhD → 2
+
+#### Best Used For
+
+- Ordered categorical data
+
+#### Advantages
+
+- Preserves category order.
+- Simple and efficient.
+
+#### Disadvantages
+
+- Works only when categories have a meaningful order.
+
+---
+
+## Comparison
+
+| Technique | Best For |
+|-----------|----------|
+| Label Encoding | Binary Data / Target Labels |
+| One-Hot Encoding | Nominal Data |
+| Ordinal Encoding | Ordered Categories |
+
+---
+
+## Dataset Used
+
+Columns:
+
+- id
+- city
+- gender
+- education
+
+---
+
+## Libraries Used
+
+- pandas
+- scikit-learn
+
+---
+
+## Conclusion
+
+Encoding converts categorical values into numerical form before training Machine Learning models.
+
+Selecting the correct encoding technique improves model performance and avoids misleading relationships between categories.
+---
+
+## Status
+
+- ✅ Completed on: 28 July 2026
+- 📚 Module: Data Preprocessing
+- 📖 Topic: Encoding
+- 🔢 Topic Number: 02
+- 🐍 Language: Python
+- 📦 Libraries: pandas, scikit-learn
