@@ -290,3 +290,173 @@ Selecting the correct encoding technique improves model performance and avoids m
 - 🔢 Topic Number: 02
 - 🐍 Language: Python
 - 📦 Libraries: pandas, scikit-learn
+
+
+
+# Feature Scaling
+
+## Definition
+
+Feature Scaling is a data preprocessing technique used to bring numerical features to a similar scale. It helps Machine Learning algorithms perform better by preventing features with larger values from dominating those with smaller values.
+
+---
+
+## Why Feature Scaling?
+
+Suppose we have:
+
+Age = 25
+
+Salary = 75000
+
+Here, Salary has much larger values than Age.
+
+Many Machine Learning algorithms such as KNN, K-Means, SVM, Logistic Regression, and Gradient Descent are affected by the difference in feature scales.
+
+Feature Scaling solves this problem by converting features into a comparable range.
+
+---
+
+# Types of Feature Scaling
+
+## 1. Standardization (Z-Score Scaling)
+
+### Formula
+
+Z = (X - Mean) / Standard Deviation
+
+### Characteristics
+
+- Mean becomes 0
+- Standard Deviation becomes 1
+- Values are not limited to a fixed range
+
+### Advantages
+
+- Works well for normally distributed data
+- Commonly used in Machine Learning
+
+### Disadvantages
+
+- Sensitive to outliers
+
+---
+
+## 2. Min-Max Scaling
+
+### Formula
+
+(X - Min) / (Max - Min)
+
+### Characteristics
+
+- Converts values into the range of 0 to 1
+
+### Advantages
+
+- Easy to understand
+- Preserves the original distribution
+
+### Disadvantages
+
+- Highly affected by outliers
+
+---
+
+## 3. Robust Scaling
+
+### Formula
+
+(X - Median) / IQR
+
+Where,
+
+IQR = Q3 - Q1
+
+### Characteristics
+
+- Uses Median instead of Mean
+- Uses Interquartile Range (IQR)
+
+### Advantages
+
+- Works well with outliers
+- More robust than Standardization
+
+### Disadvantages
+
+- Does not scale values into a fixed range
+
+---
+
+## 4. Normalization
+
+### Formula
+
+X = X / √(x₁² + x₂² + x₃² + ...)
+
+### Characteristics
+
+- Converts each row into unit length
+- Each sample has magnitude equal to 1
+
+### Advantages
+
+- Useful for Cosine Similarity
+- Used in Text Mining and KNN
+
+### Disadvantages
+
+- Not suitable for every Machine Learning algorithm
+
+---
+
+# Comparison
+
+| Technique | Range | Outlier Handling | Best For |
+|-----------|-------|-----------------|----------|
+| Standardization | No fixed range | ❌ Sensitive | Normal Distribution |
+| Min-Max Scaling | 0 to 1 | ❌ Sensitive | Neural Networks |
+| Robust Scaling | No fixed range | ✅ Good | Data with Outliers |
+| Normalization | Unit Length | Depends | Text Mining, KNN |
+
+---
+
+# Interview Questions
+
+### What is Feature Scaling?
+
+Feature Scaling is the process of transforming numerical features into a similar scale to improve Machine Learning model performance.
+
+### Why do we use Feature Scaling?
+
+To prevent features with larger values from dominating features with smaller values.
+
+### Which scaler is best for data with outliers?
+
+RobustScaler.
+
+### Which scaler converts values between 0 and 1?
+
+MinMaxScaler.
+
+### Which scaler makes Mean = 0 and Standard Deviation = 1?
+
+StandardScaler.
+
+### Which scaler is commonly used for Text Mining?
+
+Normalizer.
+
+---
+
+## Libraries Used
+
+- pandas
+- sklearn.preprocessing
+
+---
+
+## Status
+
+✅ Completed on: 04 August 2026
