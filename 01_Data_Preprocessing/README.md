@@ -9,15 +9,16 @@ Data Preprocessing is one of the most important steps in the Machine Learning pi
 - ✅ Missing Value Imputation
 - ✅ Encoding Categorical Data
 - ✅ Feature Scaling
-- ⏳ Handling Outliers
+- ✅ Handling Outliers
 - ⏳ Handling Imbalanced Data
 - ⏳ Train-Test Split
 
 ---
 
+
+
 ## 📂 Folder Structure
 
-```
 ```text
 01_Data_Preprocessing/
 │
@@ -31,17 +32,17 @@ Data Preprocessing is one of the most important steps in the Machine Learning pi
 │   ├── 02_encoding.py
 │   ├── 03_feature_scaling.ipynb
 │   ├── 03_feature_scaling.py
+│   ├── 04_outliers.ipynb
+│   └── 04_outliers.py
 │
 ├── datasets/
 │   ├── 01_missing_value_imputation.csv
 │   ├── 02_encoding.csv
-│   └── 03_feature_scaling.csv
+│   ├── 03_feature_scaling.csv
+│   └── 04_outliers.csv
 │
 └── images/
 ```
-```
-
----
 
 ## 📖 Description of Each Topic
 
@@ -118,12 +119,14 @@ Detailed theory, explanations, and interview notes are available in **notes.md**
 
 ---
 
+
+
 ## 🚀 Status
 
 - [x] Missing Value Imputation
 - [x] Encoding
 - [x] Feature Scaling
-- [ ] Handling Outliers
+- [x] Handling Outliers
 - [ ] Handling Imbalanced Data
 - [ ] Train-Test Split
 
