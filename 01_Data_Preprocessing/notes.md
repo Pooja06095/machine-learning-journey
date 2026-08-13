@@ -460,3 +460,125 @@ Normalizer.
 ## Status
 
 ✅ Completed on: 04 August 2026
+
+
+
+
+# Handling Outliers
+
+## Definition
+
+An outlier is a data point that is significantly different from the other observations in a dataset.
+
+Outliers may occur because of:
+
+- Data entry errors
+- Measurement errors
+- Experimental errors
+- Genuine unusual observations
+
+Outliers can negatively affect Machine Learning models, especially algorithms that depend on mean, variance, or distance.
+
+---
+
+## Why Handle Outliers?
+
+Outliers can:
+
+- Distort the mean and standard deviation.
+- Affect statistical analysis.
+- Influence Machine Learning model performance.
+- Cause inaccurate predictions.
+- Affect distance-based algorithms.
+
+Therefore, detecting and handling outliers is an important part of Data Preprocessing.
+
+---
+
+# Methods for Detecting Outliers
+
+## 1. IQR Method
+
+IQR stands for Interquartile Range.
+
+### Formula
+
+IQR = Q3 - Q1
+
+Where:
+
+- Q1 = First Quartile (25th percentile)
+- Q3 = Third Quartile (75th percentile)
+
+### Lower Bound
+
+Lower Bound = Q1 - 1.5 × IQR
+
+### Upper Bound
+
+Upper Bound = Q3 + 1.5 × IQR
+
+Any value:
+
+- Below the Lower Bound, or
+- Above the Upper Bound
+
+is considered an outlier.
+
+### Advantages
+
+- Simple and easy to understand.
+- Does not require normally distributed data.
+- Less affected by extreme values.
+
+### Disadvantages
+
+- The 1.5 × IQR rule may not be suitable for every dataset.
+
+---
+
+## 2. Z-Score Method
+
+Z-Score measures how far a data point is from the mean in terms of standard deviations.
+
+### Formula
+
+Z = (X - Mean) / Standard Deviation
+
+Generally:
+
+|Z| > 3
+
+is considered an outlier.
+
+### Advantages
+
+- Simple mathematical method.
+- Useful for normally distributed data.
+- Shows how far an observation is from the mean.
+
+### Disadvantages
+
+- Sensitive to extreme values.
+- Works best when data is approximately normally distributed.
+
+---
+
+# Outlier Removal
+
+After detecting outliers, they can be removed from the dataset.
+
+For the IQR method, only values within the lower and upper bounds are retained.
+
+Example:
+
+```python
+df_iqr = df[
+    (df["salary"] >= lower_bound) &
+    (df["salary"] <= upper_bound)
+]
+
+## Status
+
+✅ Completed on: 04 August 2026
+
