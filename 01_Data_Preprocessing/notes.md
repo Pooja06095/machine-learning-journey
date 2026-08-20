@@ -582,3 +582,245 @@ df_iqr = df[
 
 ✅ Completed on: 04 August 2026
 
+
+
+# Handling Imbalanced Data
+
+## Definition
+
+Imbalanced data occurs when the classes in a classification dataset are not equally distributed.
+
+Example:
+
+* Class 0 → 20 samples
+* Class 1 → 2 samples
+
+Here, Class 0 is the **majority class** and Class 1 is the **minority class**.
+
+Highly imbalanced data can make a Machine Learning model biased toward the majority class.
+
+---
+
+## Why Handle Imbalanced Data?
+
+Imbalanced data can:
+
+* Make the model biased toward the majority class.
+* Reduce the model's ability to correctly identify the minority class.
+* Produce misleading accuracy.
+* Affect classification performance.
+
+Therefore, handling imbalanced data is an important part of Data Preprocessing.
+
+---
+
+# Techniques for Handling Imbalanced Data
+
+## 1. Random Over Sampling
+
+Random Over Sampling increases the number of minority-class samples by randomly selecting and duplicating existing minority samples.
+
+### Example
+
+Before:
+
+```text
+Class 0 → 20
+Class 1 → 2
+```
+
+After Over Sampling:
+
+```text
+Class 0 → 20
+Class 1 → 20
+```
+
+### Advantages
+
+* Simple and easy to implement.
+* Does not remove majority-class data.
+* Useful for small datasets.
+
+### Disadvantages
+
+* May cause overfitting.
+* Duplicate samples do not add new information.
+
+---
+
+## 2. Random Under Sampling
+
+Random Under Sampling reduces the number of majority-class samples by randomly removing some of them.
+
+### Example
+
+Before:
+
+```text
+Class 0 → 20
+Class 1 → 2
+```
+
+After Under Sampling:
+
+```text
+Class 0 → 2
+Class 1 → 2
+```
+
+### Advantages
+
+* Reduces dataset size.
+* Faster model training.
+* Easy to implement.
+
+### Disadvantages
+
+* May remove useful information.
+* Can reduce the overall amount of training data.
+
+---
+
+## 3. SMOTE
+
+SMOTE stands for **Synthetic Minority Oversampling Technique**.
+
+It creates new synthetic samples for the minority class instead of simply duplicating existing samples.
+
+### Example
+
+Before:
+
+```text
+Class 0 → 20
+Class 1 → 2
+```
+
+After SMOTE:
+
+```text
+Class 0 → 20
+Class 1 → 20
+```
+
+### Advantages
+
+* Creates synthetic minority samples.
+* Does not simply duplicate existing samples.
+* Helps reduce overfitting compared to simple Random Over Sampling.
+
+### Disadvantages
+
+* May create noisy or less useful synthetic samples.
+* Requires sufficient minority-class samples.
+* Can increase computational cost.
+
+### Important Parameter
+
+```python
+SMOTE(k_neighbors=1, random_state=42)
+```
+
+`k_neighbors` determines the number of neighboring minority samples used to generate synthetic samples.
+
+In our dataset, only 2 minority samples were available, so `k_neighbors=1` was used.
+
+---
+
+# Class Distribution Comparison
+
+| Technique             | Class 0 | Class 1 |
+| --------------------- | ------- | ------- |
+| Original              | 20      | 2       |
+| Random Over Sampling  | 20      | 20      |
+| Random Under Sampling | 2       | 2       |
+| SMOTE                 | 20      | 20      |
+
+---
+
+# Comparison
+
+| Technique             | Main Idea                         | Advantage             | Disadvantage             |
+| --------------------- | --------------------------------- | --------------------- | ------------------------ |
+| Random Over Sampling  | Duplicate minority samples        | Keeps majority data   | May cause overfitting    |
+| Random Under Sampling | Remove majority samples           | Reduces dataset size  | May lose information     |
+| SMOTE                 | Create synthetic minority samples | Generates new samples | May create noisy samples |
+
+---
+
+# Python Libraries Used
+
+* pandas
+* matplotlib
+* scikit-learn
+* imbalanced-learn
+
+### Functions / Classes Used
+
+* `resample()`
+* `SMOTE()`
+* `value_counts()`
+* `pd.concat()`
+* `DataFrame()`
+* `plot()`
+
+---
+
+# Interview Questions
+
+### Q1. What is Imbalanced Data?
+
+Imbalanced data is a dataset where one class has significantly more samples than another class.
+
+### Q2. What is the majority class?
+
+The class having a larger number of samples is called the majority class.
+
+### Q3. What is the minority class?
+
+The class having fewer samples is called the minority class.
+
+### Q4. What is Random Over Sampling?
+
+It increases minority-class samples by randomly duplicating existing minority samples.
+
+### Q5. What is Random Under Sampling?
+
+It reduces majority-class samples by randomly removing some majority samples.
+
+### Q6. What is SMOTE?
+
+SMOTE stands for **Synthetic Minority Oversampling Technique**. It creates synthetic samples for the minority class.
+
+### Q7. What is the difference between Over Sampling and SMOTE?
+
+Random Over Sampling duplicates existing minority samples, while SMOTE generates new synthetic minority samples.
+
+### Q8. Which technique may cause loss of information?
+
+Random Under Sampling, because it removes majority-class samples.
+
+### Q9. Which technique may cause overfitting due to duplicate samples?
+
+Random Over Sampling.
+
+---
+
+# Key Takeaways
+
+* Imbalanced data occurs when classes have unequal numbers of samples.
+* Majority class has more samples.
+* Minority class has fewer samples.
+* Random Over Sampling duplicates minority samples.
+* Random Under Sampling removes majority samples.
+* SMOTE generates synthetic minority samples.
+* Under Sampling may cause information loss.
+* Over Sampling may cause overfitting.
+* SMOTE is commonly used for handling imbalanced classification data.
+
+---
+
+## Status
+
+✅ Completed on: 20 August 2026
