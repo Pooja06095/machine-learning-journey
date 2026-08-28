@@ -824,3 +824,79 @@ Random Over Sampling.
 ## Status
 
 ✅ Completed on: 20 August 2026
+
+
+
+# Train-Test Split
+
+## Definition
+
+Train-Test Split is a data preprocessing technique used to divide a dataset into two parts:
+
+- Training Data
+- Testing Data
+
+The training data is used to train the Machine Learning model, while the testing data is used to evaluate the model's performance on unseen data.
+
+---
+
+## Why Use Train-Test Split?
+
+Train-Test Split helps to:
+
+- Evaluate model performance.
+- Test the model on unseen data.
+- Detect overfitting.
+- Measure how well the model generalizes to new data.
+
+---
+
+## Training Data
+
+Training data is the portion of the dataset used to train the Machine Learning model.
+
+Example:
+
+80% of the dataset can be used for training.
+
+---
+
+## Testing Data
+
+Testing data is the portion of the dataset used to evaluate the trained model.
+
+Example:
+
+20% of the dataset can be used for testing.
+
+---
+
+## Common Train-Test Ratio
+
+A commonly used split is:
+
+- 80% → Training Data
+- 20% → Testing Data
+
+Other ratios such as 70:30 can also be used depending on the dataset.
+
+---
+
+## Python Implementation
+
+Scikit-learn provides the `train_test_split()` function.
+
+```python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42,
+    stratify=y
+)
+
+Status
+
+✅ Completed on: 20 August 2026
